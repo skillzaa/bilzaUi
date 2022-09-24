@@ -6,5 +6,6 @@ export default class Ui extends UiDraw {
     mousedownEvt(e: MouseEvent): void;
     mouseupEvt(e: MouseEvent): void;
     mousemoveEvt(e: MouseEvent): void;
+    reportEvt(): void;
 }
 //# sourceMappingURL=ui.d.ts.map

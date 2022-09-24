@@ -1,7 +1,8 @@
-import { IComponent } from "../../node_modules/bilza/src/bilza";
+import Bilza, { IComponent } from "../../node_modules/bilza/src/bilza";
 export default class CodeBuilder {
     comps: IComponent[];
-    constructor(comps: IComponent[]);
-    gen(): void;
+    bil: Bilza;
+    constructor(bil: Bilza);
+    gen(): string[];
 }
 //# sourceMappingURL=codeBuilder.d.ts.map

@@ -1,5 +1,6 @@
 import Drag from "./drag.js";
 import UiDraw from "./uiDraw.js";
+import CodeBuilder from "./codeBuilder/codeBuilder.js";
 export default class Ui extends UiDraw {
     constructor() {
         super();
@@ -36,5 +37,10 @@ export default class Ui extends UiDraw {
             this.drag.dragEvt(e, comp);
         }
         this.draw();
+    }
+    reportEvt() {
+        const rb = new CodeBuilder(this.bil);
+        const rep = rb.gen();
+        console.log(rep.join("\n"));
     }
 }
