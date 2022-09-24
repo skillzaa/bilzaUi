@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "bilza": "^0.1.2"
   }
 }

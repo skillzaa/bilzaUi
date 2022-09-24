@@ -6,11 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
-#bilza {border: 1px solid blue;}    
+* {margin:0px;padding:0px;}    
+body {background-color:black}
+#container {
+    display: flex;
+  justify-content: center;
+}    
+#mainMenu{
+    width:100%;
+    height:20px;
+    background-color: blue;
+    color:white;
+    padding:4px;
+    margin:0px;
+}
 </style>    
 </head>
 <body>
-<canvas id="bilza"></canvas>    
+
+<div id="mainMenu">
+<button id="test">Test</button>
+</div>        
+
+<div id="container">
+<canvas id="bilza"></canvas>
+</div>
 
 <script src="./src/index.js" type="module"></script>
 </body>
