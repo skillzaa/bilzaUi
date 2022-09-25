@@ -1,0 +1,1 @@
+{"version":3,"file":"baseCompDb.d.ts","sourceRoot":"","sources":["../../../typescript/recorder/comps/baseCompDb.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,gBAAgB,CAAC;AAGvC,MAAM,CAAC,OAAO,OAAO,UAAW,SAAQ,SAAS;IACjD,SAAgB,SAAS,EAAE,MAAM,CAAC;IAClC,SAAgB,OAAO,EAAE,MAAM,CAAC;gBACpB,EAAE,EAAE,MAAM,EAAC,SAAS,EAAE,MAAM,EAAC,OAAO,EAAE,MAAM;CAOvD"}
