@@ -1,9 +1,7 @@
 import Bilza, { IComponent } from "../../node_modules/bilza/src/bilza.js";
-import CorePropsForm from "../forms/corePropsForm.js";
 export default class Wrapper {
     bil: Bilza;
     interval: number | null;
-    corePropsForm: CorePropsForm;
     constructor();
     addFillRect(): void;
     detectHit(e: MouseEvent): IComponent | null;
@@ -14,5 +12,6 @@ export default class Wrapper {
     start(): void;
     stop(): void;
     draw(): void;
+    getComps(): IComponent[];
 }
 //# sourceMappingURL=wrapper.d.ts.map

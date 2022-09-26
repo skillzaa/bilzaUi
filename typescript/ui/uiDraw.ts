@@ -9,12 +9,12 @@ constructor(){
 super();    
 
 }
-start(){
-    this.draw();
-}
+
+
 draw(){
     this.wrapper.draw();   
     this.drawSelCompBdry(); 
+    this.corePropsForm.save(this.selectedComp);
 }
 
 private drawSelCompBdry(){

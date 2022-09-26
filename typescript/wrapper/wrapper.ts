@@ -1,16 +1,12 @@
 
 import Bilza,{IComponent} from "../../node_modules/bilza/src/bilza.js";
-import CorePropsForm from "../forms/corePropsForm.js";
-
 
 ///////////////////////////////////////////////////////
 export default class Wrapper{
 bil:Bilza;
 interval :number | null;
-corePropsForm :CorePropsForm;
 ///////////////////////////
-constructor(){
-this.corePropsForm = new CorePropsForm();    
+constructor(){  
 this.interval = null;
     this.bil = new Bilza("bilza",70); 
     if (this.bil==null){throw new Error("failed to init Bilza");}    
@@ -90,6 +86,9 @@ stop(){
 }
 draw(){
   this.bil.draw();  
+}
+getComps(){
+    return this.bil.getComps();
 }
 ////////////////////////////////////////////////////////    
 }

@@ -1,8 +1,6 @@
 import Bilza from "../../node_modules/bilza/src/bilza.js";
-import CorePropsForm from "../forms/corePropsForm.js";
 export default class Wrapper {
     constructor() {
-        this.corePropsForm = new CorePropsForm();
         this.interval = null;
         this.bil = new Bilza("bilza", 70);
         if (this.bil == null) {
@@ -77,5 +75,8 @@ export default class Wrapper {
     }
     draw() {
         this.bil.draw();
+    }
+    getComps() {
+        return this.bil.getComps();
     }
 }

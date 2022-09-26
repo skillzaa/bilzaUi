@@ -31,6 +31,7 @@ export default class Ui extends UiDraw {
         this.wrapper.addFillRect();
     }
     evt002() {
+        console.log(this.wrapper.getComps());
     }
     evt003() {
         console.log("evt 003");

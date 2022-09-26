@@ -6,7 +6,6 @@ export default class Ui extends UiDraw {
 
 constructor(){
 super();
-
 }
 
 clickEvt(e :MouseEvent){
@@ -46,6 +45,7 @@ this.wrapper.addFillRect();
 // console.log("recorder",this.recorder.getComps());    
 }
 evt002(){
+console.log(this.wrapper.getComps());    
 //  this.save();
 }
 evt003(){

@@ -1,5 +1,6 @@
 import Recorder from "../recorder/recorder.js";
 import Wrapper from "../wrapper/wrapper.js";
+import CorePropsForm from "../forms/corePropsForm.js";
 export default class BaseUi {
     constructor() {
         this.wrapper = new Wrapper();
@@ -7,6 +8,7 @@ export default class BaseUi {
         if (this.canvas == null) {
             throw new Error("failed to find canvas");
         }
+        this.corePropsForm = new CorePropsForm();
         this.recorder = new Recorder();
         this.selectedComp = null;
         this.drag = null;
