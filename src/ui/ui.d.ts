@@ -1,7 +1,6 @@
-import UiDraw from "./ui/uiDraw.js";
+import UiDraw from "./uiDraw.js";
 export default class Ui extends UiDraw {
     constructor();
-    testBtnEvt(e: MouseEvent): void;
     clickEvt(e: MouseEvent): void;
     mousedownEvt(e: MouseEvent): void;
     mouseupEvt(e: MouseEvent): void;
@@ -11,6 +10,5 @@ export default class Ui extends UiDraw {
     evt003(): void;
     evt004(): void;
     evt005(): void;
-    reportEvt(): void;
 }
 //# sourceMappingURL=ui.d.ts.map

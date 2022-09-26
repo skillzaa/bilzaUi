@@ -1,5 +1,5 @@
-import Recorder from "./recorder/recorder.js";
-import Wrapper from "./wrapper/wrapper.js";
+import Recorder from "../recorder/recorder.js";
+import Wrapper from "../wrapper/wrapper.js";
 export default class BaseUi {
     constructor() {
         this.wrapper = new Wrapper();

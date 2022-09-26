@@ -1,4 +1,4 @@
-import {IComponent} from "../node_modules/bilza/src/bilza.js";
+import {IComponent} from "../../node_modules/bilza/src/bilza.js";
 
 
 export default class Drag {

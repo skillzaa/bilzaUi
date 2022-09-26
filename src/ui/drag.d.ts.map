@@ -1,0 +1,1 @@
+{"version":3,"file":"drag.d.ts","sourceRoot":"","sources":["../../typescript/ui/drag.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,UAAU,EAAC,MAAM,uCAAuC,CAAC;AAGjE,MAAM,CAAC,OAAO,OAAO,IAAI;IACzB,IAAI,EAAE,MAAM,CAAC;IACb,IAAI,EAAE,MAAM,CAAC;gBAED,CAAC,EAAE,UAAU;IAIzB,OAAO,CAAC,CAAC,EAAE,UAAU,EAAC,OAAO,EAAC,UAAU;CA2BvC"}

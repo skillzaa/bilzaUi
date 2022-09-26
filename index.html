@@ -20,19 +20,69 @@ body {background-color:black}
     padding:4px;
     margin:0px;
 }
+.fixed {
+  position: fixed;
+  padding-top: 30px;
+  background-color: grey;
+  padding-left: 10px;
+  top: 0;
+  z-index:100;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #73AD21;
+}
 </style>    
 </head>
 <body>
 
 <div id="mainMenu">
-<button id="test">Test</button>
-<button id="report">Report</button>
+<button id="001">001</button>
+<button id="002">002</button>
+<button id="003">003</button>
+<button id="004">004</button>
+<button id="005">005</button>
+<button id="006">006</button>
+<button id="007">007</button>
+<button id="008">008</button>
+<button id="009">009</button>
+<button id="010">010</button>
+<button id="011">011</button>
+<button id="012">012</button>
+<button id="013">013</button>
+<button id="014">014</button>
+<button id="015">015</button>
+<button id="016">016</button>
+<button id="017">017</button>
+<button id="018">018</button>
+<button id="019">019</button>
+<button id="020">020</button>
+<button id="021">021</button>
+<button id="022">022</button>
+<button id="023">023</button>
 </div>        
 
 <div id="container">
 <canvas id="bilza"></canvas>
 </div>
 
+<!-- Core Props Form -->
+<div id="corePropsForm" class="fixed">
+<table>
+<tr><td>Width</td></tr>
+<tr><td><input type="text" name="widthInput" id="widthInput"></td></tr>
+<tr><td>Height</td></tr>
+<tr><td><input type="text" name="widthInput" id="heightInput"></td></tr>
+<tr><td>Width</td></tr>
+<tr><td><input type="text" name="widthInput" id="widthInput"></td></tr>
+<tr><td>Width</td></tr>
+<tr><td><input type="text" name="widthInput" id="widthInput"></td></tr>
+<tr><td>Width</td></tr>
+<tr><td><input type="text" name="widthInput" id="widthInput"></td></tr>
+
+</table>
+
+</div>
 <script src="./src/index.js" type="module"></script>
 </body>
 </html>

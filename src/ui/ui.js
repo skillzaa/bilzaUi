@@ -1,10 +1,8 @@
 import Drag from "./drag.js";
-import UiDraw from "./ui/uiDraw.js";
+import UiDraw from "./uiDraw.js";
 export default class Ui extends UiDraw {
     constructor() {
         super();
-    }
-    testBtnEvt(e) {
     }
     clickEvt(e) {
         const comp = this.wrapper.detectHit(e);
@@ -42,7 +40,5 @@ export default class Ui extends UiDraw {
     }
     evt005() {
         console.log("evt 005");
-    }
-    reportEvt() {
     }
 }
