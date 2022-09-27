@@ -21,7 +21,7 @@ this.wrapper = new Wrapper();
 this.canvas =  document.getElementById("bilza") as HTMLCanvasElement;    
 if (this.canvas == null){throw new Error("failed to find canvas");
 }
-this.corePropsForm = new CorePropsForm();  
+this.corePropsForm = new CorePropsForm("corePropsForm");  
 this.recorder = new Recorder();    
 this.selectedComp = null;
 this.drag = null;

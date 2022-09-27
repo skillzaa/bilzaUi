@@ -3,7 +3,11 @@ const ui = new Ui();
 ////////////////////////////////////
 const canvas = document.getElementById("bilza") as HTMLCanvasElement;
 if (canvas==null){throw new Error("canvas not found");}
-
+//////////////////
+canvas.addEventListener("click",ui.clickEvt.bind(ui));
+canvas.addEventListener("mousedown",ui.mousedownEvt.bind(ui));
+canvas.addEventListener("mouseup",ui.mouseupEvt.bind(ui));
+canvas.addEventListener("mousemove",ui.mousemoveEvt.bind(ui));
 
 //-------------------------
 const Btn001 = document.getElementById("001");
@@ -26,11 +30,13 @@ const Btn005 = document.getElementById("005");
 if (Btn005 !== null){
 Btn005.addEventListener("click",ui.evt005.bind(ui));
 }
-//////////////////
-canvas.addEventListener("click",ui.clickEvt.bind(ui));
-canvas.addEventListener("mousedown",ui.mousedownEvt.bind(ui));
-canvas.addEventListener("mouseup",ui.mouseupEvt.bind(ui));
-canvas.addEventListener("mousemove",ui.mousemoveEvt.bind(ui));
+
+////////////--core props form
+
+const corePropsWidth = document.getElementById("corePropsWidth");
+if (corePropsWidth !== null){
+corePropsWidth.addEventListener("input",ui.corePropWidth.bind(ui));
+}
 
 
 setInterval(()=>{

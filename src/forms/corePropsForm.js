@@ -1,14 +1,33 @@
-export default class CorePropsForm {
-    constructor() {
+import BaseForm from "./baseForm.js";
+export default class CorePropsForm extends BaseForm {
+    constructor(formId) {
+        super(formId);
     }
-    save(selectedComp) {
+    clear() {
+    }
+    update(selectedComp) {
+        this.updateNoControl(selectedComp, "corePropsWidth");
+    }
+    corePropWidth(selectedComp) {
+        const corePropsWidth = document.getElementById("corePropsWidth");
+        if (corePropsWidth == null) {
+            return;
+        }
+        const value = corePropsWidth.value;
+        const valueNo = parseInt(value);
+        if (typeof valueNo == "number") {
+            if (selectedComp !== null) {
+                selectedComp.width.set(valueNo);
+            }
+        }
+    }
+    updateSelComp(selectedComp) {
         if (selectedComp == null) {
             return;
         }
-        selectedComp.width.set(300);
-        selectedComp.height.set(300);
-        selectedComp.x.set(20);
-        selectedComp.y.set(20);
-        return 50;
+        const title = document.getElementById("corePropsFormSelComp");
+        if (title !== null) {
+            title.innerHTML = `<h3>${selectedComp.id}</h3>`;
+        }
     }
 }

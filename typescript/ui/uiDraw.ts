@@ -10,11 +10,10 @@ super();
 
 }
 
-
 draw(){
     this.wrapper.draw();   
     this.drawSelCompBdry(); 
-    this.corePropsForm.save(this.selectedComp);
+    // this.corePropsForm.save(this.selectedComp);
 }
 
 private drawSelCompBdry(){

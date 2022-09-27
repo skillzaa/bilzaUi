@@ -6,7 +6,6 @@ export default class UiDraw extends BaseUi {
     draw() {
         this.wrapper.draw();
         this.drawSelCompBdry();
-        this.corePropsForm.save(this.selectedComp);
     }
     drawSelCompBdry() {
         if (this.selectedComp == null) {
