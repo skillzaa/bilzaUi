@@ -6,8 +6,7 @@ export default class Ui extends UiDraw {
 
 constructor(){
 super();
-// const dd = document.getElementById("corePropsForm") as HTMLDivElement;
-// dd.  = none;
+
 }
 
 clickEvt(e :MouseEvent){
@@ -18,8 +17,7 @@ const comp = this.wrapper.detectHit(e);
     }else {
         // comp.selected =  true;
         this.selectedComp = comp;
-        this.corePropsForm.updateSelComp(this.selectedComp);
-        this.corePropsForm.update(this.selectedComp);
+        this.corePropsForm.refresh(this.selectedComp);
     }
 //----this.draw();
 }
@@ -63,9 +61,9 @@ evt005(){
 }
 
 /////////////////////core-props-form
-corePropWidth(){
-this.corePropsForm.corePropWidth( this.selectedComp );
+// corePropWidth(){
+// this.corePropsForm.corePropWidth( this.selectedComp );
 
-}
+// }
 /////////////////////////////////
 }

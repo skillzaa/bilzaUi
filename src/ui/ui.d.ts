@@ -10,6 +10,5 @@ export default class Ui extends UiDraw {
     evt003(): void;
     evt004(): void;
     evt005(): void;
-    corePropWidth(): void;
 }
 //# sourceMappingURL=ui.d.ts.map

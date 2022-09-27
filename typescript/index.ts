@@ -33,11 +33,8 @@ Btn005.addEventListener("click",ui.evt005.bind(ui));
 
 ////////////--core props form
 
-const corePropsWidth = document.getElementById("corePropsWidth");
-if (corePropsWidth !== null){
-corePropsWidth.addEventListener("input",ui.corePropWidth.bind(ui));
-}
 
+/////////////////////////////////////////////////////////
 
 setInterval(()=>{
     ui.draw();

@@ -28,10 +28,6 @@ const Btn005 = document.getElementById("005");
 if (Btn005 !== null) {
     Btn005.addEventListener("click", ui.evt005.bind(ui));
 }
-const corePropsWidth = document.getElementById("corePropsWidth");
-if (corePropsWidth !== null) {
-    corePropsWidth.addEventListener("input", ui.corePropWidth.bind(ui));
-}
 setInterval(() => {
     ui.draw();
 }, 2);

@@ -5,8 +5,22 @@ export default class CorePropsForm extends BaseForm {
     }
     clear() {
     }
-    update(selectedComp) {
+    refresh(selectedComp) {
         this.updateNoControl(selectedComp, "corePropsWidth");
+        this.updateNoControl(selectedComp, "corePropsHeight");
+    }
+    saveToComp(selectedComp, controlId, propName) {
+        const cont = document.getElementById(controlId);
+        if (cont == null) {
+            return;
+        }
+        const value = cont.value;
+        const valueNo = parseInt(value);
+        if (typeof valueNo == "number") {
+            if (selectedComp !== null) {
+                selectedComp[propName].set(valueNo);
+            }
+        }
     }
     corePropWidth(selectedComp) {
         const corePropsWidth = document.getElementById("corePropsWidth");

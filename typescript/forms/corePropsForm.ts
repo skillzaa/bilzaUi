@@ -3,7 +3,8 @@ import BaseForm from "./baseForm.js";
 
 export default class CorePropsForm  extends BaseForm{
 constructor(formId :string){
-super(formId);    
+super(formId); 
+   
 }
 clear(){
 
@@ -11,12 +12,28 @@ clear(){
 
 }
 
-update(selectedComp :IComponent){
+refresh(selectedComp :IComponent){
 this.updateNoControl(selectedComp,"corePropsWidth");
+this.updateNoControl(selectedComp,"corePropsHeight");
 
 }
 
+saveToComp(selectedComp :IComponent,controlId :string,propName:string ){
+const cont : HTMLInputElement | null = document.getElementById(controlId) as HTMLInputElement;    
 
+    if (cont == null){return;}
+    
+    const value = cont.value;
+    const valueNo = parseInt(value);
+    
+    if (typeof valueNo == "number"){
+        if (selectedComp !== null){
+            //@ts-expect-error
+            selectedComp[propName].set(valueNo);
+            // console.log(valueNo);
+        }
+    }    
+}
 corePropWidth(selectedComp :IComponent | null){
 const corePropsWidth : HTMLInputElement | null = document.getElementById("corePropsWidth") as HTMLInputElement;    
 

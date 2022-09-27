@@ -11,8 +11,7 @@ export default class Ui extends UiDraw {
         }
         else {
             this.selectedComp = comp;
-            this.corePropsForm.updateSelComp(this.selectedComp);
-            this.corePropsForm.update(this.selectedComp);
+            this.corePropsForm.refresh(this.selectedComp);
         }
     }
     mousedownEvt(e) {
@@ -43,8 +42,5 @@ export default class Ui extends UiDraw {
     }
     evt005() {
         console.log("evt 005");
-    }
-    corePropWidth() {
-        this.corePropsForm.corePropWidth(this.selectedComp);
     }
 }
