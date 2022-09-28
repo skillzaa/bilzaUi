@@ -17,7 +17,7 @@ draw(){
 }
 
 private drawSelCompBdry(){
-if (this.selectedComp ==null){return;}
+if (this.selectedComp.comp ==null){return;}
     //--importantay    
     const ctx :CanvasRenderingContext2D = this.wrapper.getCtx();
         ctx.lineWidth = 10;
@@ -26,10 +26,10 @@ if (this.selectedComp ==null){return;}
         ctx.strokeStyle = "green";
     ctx.beginPath();
         ctx.rect(
-        this.selectedComp.x.value() -3,
-        this.selectedComp.y.value() -3,
-        this.selectedComp.compWidth() + 6,
-        this.selectedComp.compHeight() + 6,
+        this.selectedComp.comp.x.value() -3,
+        this.selectedComp.comp.y.value() -3,
+        this.selectedComp.comp.compWidth() + 6,
+        this.selectedComp.comp.compHeight() + 6,
         );
     ctx.stroke();
 }

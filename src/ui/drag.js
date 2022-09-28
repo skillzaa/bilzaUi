@@ -3,7 +3,11 @@ export default class Drag {
         this.oldX = e.pageX;
         this.oldY = e.pageY;
     }
-    dragEvt(e, selComp) {
+    dragEvt(e, selCompObj) {
+        const selComp = selCompObj.comp;
+        if (selComp == null) {
+            return;
+        }
         if (e.clientX > this.oldX) {
             const newX = selComp.x.value() + Math.abs(e.clientX - this.oldX);
             selComp.x.set(newX);

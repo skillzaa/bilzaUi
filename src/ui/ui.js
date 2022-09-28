@@ -7,11 +7,11 @@ export default class Ui extends UiDraw {
     clickEvt(e) {
         const comp = this.wrapper.detectHit(e);
         if (comp == null) {
-            this.selectedComp = null;
+            this.selectedComp.setNull();
         }
         else {
-            this.selectedComp = comp;
-            this.corePropsForm.refresh(this.selectedComp);
+            this.selectedComp.setSelComp(comp);
+            this.corePropsForm.pupulate();
         }
     }
     mousedownEvt(e) {

@@ -8,7 +8,7 @@ export default class UiDraw extends BaseUi {
         this.drawSelCompBdry();
     }
     drawSelCompBdry() {
-        if (this.selectedComp == null) {
+        if (this.selectedComp.comp == null) {
             return;
         }
         const ctx = this.wrapper.getCtx();
@@ -17,7 +17,7 @@ export default class UiDraw extends BaseUi {
         ctx.fillStyle = "green";
         ctx.strokeStyle = "green";
         ctx.beginPath();
-        ctx.rect(this.selectedComp.x.value() - 3, this.selectedComp.y.value() - 3, this.selectedComp.compWidth() + 6, this.selectedComp.compHeight() + 6);
+        ctx.rect(this.selectedComp.comp.x.value() - 3, this.selectedComp.comp.y.value() - 3, this.selectedComp.comp.compWidth() + 6, this.selectedComp.comp.compHeight() + 6);
         ctx.stroke();
     }
 }

@@ -1,8 +1,8 @@
-import { IComponent } from "../../node_modules/bilza/src/bilza.js";
+import SelectedComp from "./selectedComp.js";
 export default class Drag {
     oldX: number;
     oldY: number;
     constructor(e: MouseEvent);
-    dragEvt(e: MouseEvent, selComp: IComponent): void;
+    dragEvt(e: MouseEvent, selCompObj: SelectedComp): void;
 }
 //# sourceMappingURL=drag.d.ts.map

@@ -1,11 +1,14 @@
-import { IComponent } from "../../node_modules/bilza/src/bilza.js";
 import BaseForm from "./baseForm.js";
+import SelectedComp from "../ui/selectedComp.js";
 export default class CorePropsForm extends BaseForm {
-    constructor(formId: string);
+    selectedComp: SelectedComp;
+    constructor(selectedComp: SelectedComp);
+    genForm(): void;
     clear(): void;
-    refresh(selectedComp: IComponent): void;
-    saveToComp(selectedComp: IComponent, controlId: string, propName: string): void;
-    corePropWidth(selectedComp: IComponent | null): void;
-    updateSelComp(selectedComp: IComponent | null): void;
+    pupulate(): void;
+    propWidth(): void;
+    propHeight(): void;
+    propX(): void;
+    propY(): void;
 }
 //# sourceMappingURL=corePropsForm.d.ts.map

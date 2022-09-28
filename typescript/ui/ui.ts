@@ -13,11 +13,11 @@ clickEvt(e :MouseEvent){
 const comp = this.wrapper.detectHit(e);
     if (comp == null){
         // this.unSelectAll();
-        this.selectedComp = null;
+        this.selectedComp.setNull();
     }else {
         // comp.selected =  true;
-        this.selectedComp = comp;
-        this.corePropsForm.refresh(this.selectedComp);
+        this.selectedComp.setSelComp(comp);
+        this.corePropsForm.pupulate();
     }
 //----this.draw();
 }

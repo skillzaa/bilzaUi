@@ -15,10 +15,10 @@ export default class CorePropsForm {
     show() {
         this.theDiv.style.display = 'block';
     }
-    updateNoControl(selectedComp, controlId) {
+    updateInput(controlId, value) {
         const con = document.getElementById(controlId);
         if (con !== null) {
-            con.value = selectedComp.width.value();
+            con.value = value;
         }
     }
 }

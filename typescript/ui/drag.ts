@@ -1,4 +1,5 @@
 import {IComponent} from "../../node_modules/bilza/src/bilza.js";
+import SelectedComp from "./selectedComp.js";
 
 
 export default class Drag {
@@ -9,7 +10,9 @@ constructor(e :MouseEvent){
 this.oldX = e.pageX;
 this.oldY = e.pageY;
 }
-dragEvt(e :MouseEvent,selComp:IComponent){
+dragEvt(e :MouseEvent,selCompObj:SelectedComp){
+const selComp = selCompObj.comp;
+if (selComp == null){return;}
 
 if (e.clientX > this.oldX){
     const newX:number = selComp.x.value() + Math.abs(e.clientX - this.oldX);   

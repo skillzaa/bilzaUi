@@ -23,11 +23,10 @@ this.theDiv.style.display = 'none';
 show(){
 this.theDiv.style.display = 'block';    
 }
-updateNoControl(selectedComp :IComponent,controlId : string){
+updateInput(controlId : string,value :string){
 const con = document.getElementById(controlId) as HTMLInputElement;
     if (con !== null){
-        //@ts-expect-error
-        con.value = selectedComp.width.value();
+        con.value = value;
         }    
 }
 ///////////////////////////////////////////////////
