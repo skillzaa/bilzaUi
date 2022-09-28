@@ -11,6 +11,7 @@ export default class Ui extends UiDraw {
         }
         else {
             this.selectedComp.setSelComp(comp);
+            this.corePropsForm.gen();
             this.corePropsForm.pupulate();
         }
     }
@@ -32,15 +33,19 @@ export default class Ui extends UiDraw {
         this.wrapper.addFillRect();
     }
     evt002() {
-        console.log(this.wrapper.getComps());
+        this.wrapper.addText();
     }
     evt003() {
-        this.corePropsForm.hide();
     }
     evt004() {
-        this.corePropsForm.show();
+        console.log(this.wrapper.getComps());
     }
     evt005() {
-        console.log("evt 005");
+        if (this.corePropsForm.hidden == true) {
+            this.corePropsForm.show();
+        }
+        else {
+            this.corePropsForm.hide();
+        }
     }
 }

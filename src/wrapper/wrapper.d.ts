@@ -4,6 +4,7 @@ export default class Wrapper {
     interval: number | null;
     constructor();
     addFillRect(): void;
+    addText(): void;
     detectHit(e: MouseEvent): IComponent | null;
     unSelectAll(): void;
     getSelectedComp(): IComponent | null;

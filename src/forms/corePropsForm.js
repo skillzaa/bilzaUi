@@ -1,16 +1,22 @@
 import BaseForm from "./baseForm.js";
+import FillRect from "../../node_modules/bilza/src/components/fillRect.js";
 export default class CorePropsForm extends BaseForm {
     constructor(selectedComp) {
-        var _a, _b, _c, _d;
         super("corePropsForm");
         this.selectedComp = selectedComp;
-        this.genForm();
-        (_a = document.getElementById("corePropsWidth")) === null || _a === void 0 ? void 0 : _a.addEventListener("input", this.propWidth.bind(this));
-        (_b = document.getElementById("corePropsHeight")) === null || _b === void 0 ? void 0 : _b.addEventListener("input", this.propHeight.bind(this));
-        (_c = document.getElementById("corePropsX")) === null || _c === void 0 ? void 0 : _c.addEventListener("input", this.propX.bind(this));
-        (_d = document.getElementById("corePropsY")) === null || _d === void 0 ? void 0 : _d.addEventListener("input", this.propY.bind(this));
     }
-    genForm() {
+    genCompPropForm() {
+        if (this.selectedComp.comp instanceof FillRect) {
+            return "<hr/>";
+        }
+        let html = `<h4>Comp Props</h4>`;
+        html += `<table>`;
+        html += `<tr><td><label>Font Size</label></td></tr>`;
+        html += `<tr><td><input type="number"  id="fontSizeCon"></td></tr>`;
+        html += `</table>`;
+        return html;
+    }
+    genCorePropForm() {
         let html = `<table>`;
         html += `<tr><td>
 <div id="corePropsFormSelComp">"Nothing Selected"</div>
@@ -24,10 +30,15 @@ export default class CorePropsForm extends BaseForm {
         html += `<tr><td><label>Height</label></td></tr>`;
         html += `<tr><td><input class="corePropCon" type="number" name="widthInput" id="corePropsHeight"></td></tr>`;
         html += `</table>`;
-        this.theDiv.innerHTML = html;
+        return html;
     }
     clear() {
         console.log("rrr");
+    }
+    gen() {
+        this.theDiv.innerHTML = this.genCompPropForm();
+        this.theDiv.innerHTML += this.genCorePropForm();
+        this.wire();
     }
     pupulate() {
         if (this.selectedComp.comp == null) {
@@ -39,6 +50,14 @@ export default class CorePropsForm extends BaseForm {
         this.updateInput("corePropsWidth", comp.width.value().toString());
         this.updateInput("corePropsHeight", comp.height.value().toString());
     }
+    wire() {
+        var _a, _b, _c, _d, _e;
+        (_a = document.getElementById("corePropsWidth")) === null || _a === void 0 ? void 0 : _a.addEventListener("input", this.propWidth.bind(this));
+        (_b = document.getElementById("corePropsHeight")) === null || _b === void 0 ? void 0 : _b.addEventListener("input", this.propHeight.bind(this));
+        (_c = document.getElementById("corePropsX")) === null || _c === void 0 ? void 0 : _c.addEventListener("input", this.propX.bind(this));
+        (_d = document.getElementById("corePropsY")) === null || _d === void 0 ? void 0 : _d.addEventListener("input", this.propY.bind(this));
+        (_e = document.getElementById("fontSizeCon")) === null || _e === void 0 ? void 0 : _e.addEventListener("input", this.propfontSize.bind(this));
+    }
     propWidth() {
         const corePropsWidth = document.getElementById("corePropsWidth");
         if (corePropsWidth == null) {
@@ -49,6 +68,19 @@ export default class CorePropsForm extends BaseForm {
         if (typeof valueNo == "number") {
             if (this.selectedComp.comp !== null) {
                 this.selectedComp.comp.width.set(valueNo);
+            }
+        }
+    }
+    propfontSize() {
+        const con = document.getElementById("fontSizeCon");
+        if (con == null) {
+            return;
+        }
+        const value = con.value;
+        const valueNo = parseInt(value);
+        if (typeof valueNo == "number") {
+            if (this.selectedComp.comp !== null) {
+                this.selectedComp.comp.fontSize.set(valueNo);
             }
         }
     }

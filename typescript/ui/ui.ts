@@ -17,6 +17,7 @@ const comp = this.wrapper.detectHit(e);
     }else {
         // comp.selected =  true;
         this.selectedComp.setSelComp(comp);
+        this.corePropsForm.gen();
         this.corePropsForm.pupulate();
     }
 //----this.draw();
@@ -42,22 +43,23 @@ this.drag.dragEvt(e,this.selectedComp);
 
 evt001(){
 this.wrapper.addFillRect();
-
-// this.recorder.addText(comp.id,0,33);
-// console.log("recorder",this.recorder.getComps());    
 }
 evt002(){
-console.log(this.wrapper.getComps());    
+this.wrapper.addText();    
 //  this.save();
 }
 evt003(){
-    this.corePropsForm.hide();
+    
 }
 evt004(){
-    this.corePropsForm.show();
+    console.log(this.wrapper.getComps());    
 }
 evt005(){
-    console.log("evt 005");
+    if (this.corePropsForm.hidden == true){
+        this.corePropsForm.show();
+    }else {
+        this.corePropsForm.hide();
+    }
 }
 
 /////////////////////core-props-form

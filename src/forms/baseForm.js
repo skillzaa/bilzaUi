@@ -8,11 +8,15 @@ export default class CorePropsForm {
         else {
             this.theDiv = theDiv;
         }
+        this.hidden = false;
+        this.theDiv.style.display = 'block';
     }
     hide() {
+        this.hidden = true;
         this.theDiv.style.display = 'none';
     }
     show() {
+        this.hidden = false;
         this.theDiv.style.display = 'block';
     }
     updateInput(controlId, value) {

@@ -1,6 +1,7 @@
 export default class CorePropsForm {
     formId: string;
     theDiv: HTMLDivElement;
+    hidden: boolean;
     constructor(formId: string);
     hide(): void;
     show(): void;

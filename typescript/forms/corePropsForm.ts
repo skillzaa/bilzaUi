@@ -1,6 +1,7 @@
 import { IComponent } from "../../node_modules/bilza/src/bilza.js";
 import BaseForm from "./baseForm.js";
 import SelectedComp from "../ui/selectedComp.js";
+import FillRect from "../../node_modules/bilza/src/components/fillRect.js";
 
 export default class CorePropsForm  extends BaseForm{
 public selectedComp  :SelectedComp;    
@@ -10,19 +11,25 @@ super("corePropsForm"); //feed it directly
 this.selectedComp = selectedComp;
 
 //////////////////
-this.genForm();
+
 ///////////////////////////////////////////////////
-document.getElementById("corePropsWidth")?.addEventListener("input",
-this.propWidth.bind(this));
-document.getElementById("corePropsHeight")?.addEventListener("input",
-this.propHeight.bind(this));
-document.getElementById("corePropsX")?.addEventListener("input",
-this.propX.bind(this));
-document.getElementById("corePropsY")?.addEventListener("input",
-this.propY.bind(this));
+
 
 }
-genForm(){
+
+genCompPropForm():string{
+if (this.selectedComp.comp instanceof FillRect){
+    return "<hr/>";
+}
+let html = `<h4>Comp Props</h4>`;   
+html += `<table>`;   
+html += `<tr><td><label>Font Size</label></td></tr>`;   
+html += `<tr><td><input type="number"  id="fontSizeCon"></td></tr>`;   
+html += `</table>`;
+return html;
+}
+
+genCorePropForm():string{
 let html = `<table>`;   
 
 html += `<tr><td>
@@ -42,9 +49,7 @@ html += `<tr><td><label>Height</label></td></tr>`;
 html += `<tr><td><input class="corePropCon" type="number" name="widthInput" id="corePropsHeight"></td></tr>`;   
 
 html += `</table>`;
-
-this.theDiv.innerHTML = html;
-
+return html;
 }
 // tieFnToCon(conId :string,fnName :String=""){
 // document.getElementById(conId)?.addEventListener("input",()=>{
@@ -56,7 +61,11 @@ this.theDiv.innerHTML = html;
 clear(){
     console.log("rrr");
 }
-
+gen(){
+this.theDiv.innerHTML =  this.genCompPropForm();
+this.theDiv.innerHTML +=  this.genCorePropForm();
+this.wire();
+}
 pupulate(){
 if (this.selectedComp.comp == null){return;}
 const comp = this.selectedComp.comp;
@@ -66,7 +75,18 @@ this.updateInput("corePropsWidth",comp.width.value().toString());
 this.updateInput("corePropsHeight",comp.height.value().toString());
 
 }
-
+wire(){
+    document.getElementById("corePropsWidth")?.addEventListener("input",
+this.propWidth.bind(this));
+document.getElementById("corePropsHeight")?.addEventListener("input",
+this.propHeight.bind(this));
+document.getElementById("corePropsX")?.addEventListener("input",
+this.propX.bind(this));
+document.getElementById("corePropsY")?.addEventListener("input",
+this.propY.bind(this));
+document.getElementById("fontSizeCon")?.addEventListener("input",
+this.propfontSize.bind(this));
+}
 // saveToComp(selectedComp :IComponent,controlId :string,propName:string ){
 // const cont : HTMLInputElement | null = document.getElementById(controlId) as HTMLInputElement;    
 
@@ -95,6 +115,22 @@ const valueNo = parseInt(value);
 if (typeof valueNo == "number"){
     if (this.selectedComp.comp !== null){
         this.selectedComp.comp.width.set(valueNo);
+        // console.log(valueNo);
+    }
+}    
+}
+propfontSize(){
+const con : HTMLInputElement | null = document.getElementById("fontSizeCon") as HTMLInputElement;    
+
+if (con == null){return;}
+
+const value = con.value;
+const valueNo = parseInt(value);
+
+if (typeof valueNo == "number"){
+    if (this.selectedComp.comp !== null){
+        //@ts-expect-error
+        this.selectedComp.comp.fontSize.set(valueNo);
         // console.log(valueNo);
     }
 }    

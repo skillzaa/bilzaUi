@@ -10,6 +10,9 @@ export default class Wrapper {
     addFillRect() {
         const comp = this.bil.add(0, 60).fillRect("red");
     }
+    addText() {
+        const comp = this.bil.add(0, 60).text("The Demo Text", "red");
+    }
     detectHit(e) {
         const rect = this.bil.pack.canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;

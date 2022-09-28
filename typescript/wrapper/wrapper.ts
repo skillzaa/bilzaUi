@@ -17,6 +17,9 @@ this.interval = null;
 addFillRect(){
     const comp = this.bil.add(0,60).fillRect("red");   
 }
+addText(){
+    const comp = this.bil.add(0,60).text("The Demo Text","red");   
+}
 detectHit(e :MouseEvent):IComponent | null{
 //@ts-expect-error
 const rect = this.bil.pack.canvas.getBoundingClientRect();
